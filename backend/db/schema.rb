@@ -10,18 +10,5 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_12_191558) do
-  create_table "customer_purchases", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "purchase_amount_cents", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_customer_purchases_on_customer_id"
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema[7.2].define(version: 0) do
 end
