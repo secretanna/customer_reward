@@ -10,5 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 0) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_12_190744) do
+  create_table "customer_purchases", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "purchase_amount_cents", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end

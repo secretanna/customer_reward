@@ -12,7 +12,7 @@ RSpec.describe 'CustomerPurchase' do
   end
 
   it 'validates customer_id presence' do
-    expect { CustomerPurchase.create!(purchase_amount_cents: 1000) }.to raise_error(ActiveRecord::InvalidForeignKey) 
+    expect { CustomerPurchase.create!(purchase_amount_cents: 1000) }.to raise_error(ActiveRecord::RecordInvalid) 
   end
 
   it 'validates purchase_amount_cents presence' do
