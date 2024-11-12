@@ -3,15 +3,13 @@
 require_relative 'db_connection'
 require_relative 'seeds'
 require_relative 'cleaner'
+require_relative 'customer_rewards_finder'
+require_relative '../models/reward'
 
-class Main
-  def self.execute
-    DatabaseConnection.new.establish
+DatabaseConnection.new.establish
 
-    Seeds.call
+Cleaner.flush_db
 
-    Cleaner.flush_db
-  end
-end
+Seeds.new.call
 
-Main.execute
+puts CustomerRewardsFinder.new.earned_rewards_for(234_234)
