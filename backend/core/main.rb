@@ -3,15 +3,14 @@
 require_relative 'db_connection'
 require_relative 'seeds'
 require_relative 'cleaner'
+require_relative 'customer_rewards/db_quering_finder'
 
-class Main
-  def self.execute
-    DatabaseConnection.new.establish
+DatabaseConnection.new.establish
 
-    Seeds.call
+Cleaner.flush_db
 
-    Cleaner.flush_db
-  end
-end
+Seeds.new.call
 
-Main.execute
+finder = CustomerRewards::DbQueringFinder.new
+
+puts finder.earned_rewards_for(234_234)
