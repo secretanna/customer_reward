@@ -1,8 +1,11 @@
 Here are some explanation on how to use this repo:
-
+Please, go to the main derictory
+```
+backend
+```
 First, run 
 ```
-bunlde install
+bundle install
 ```
 To initialize the db
 ```
@@ -14,6 +17,7 @@ Once this is done, you can run the main.rb file. There you can find a usage exam
 ```
 bundle exec ruby core/main.rb
 ```
+Now, you can play around, changing the seed data.
 
 I feel like need to explain some of my decisions and overall the approach.
 
