@@ -4,7 +4,11 @@ First, run
 ```
 bunlde install
 ```
-
+To initialize the db
+```
+SCHEMA=db/schema.rb bundle exec rake db:create
+SCHEMA=db/schema.rb bundle exec rake db:migrate
+```
 Once this is done, you can run the main.rb file. There you can find a usage example of RewardFinder. It will return a result for one customer from customer_purchases list.
 
 ```
